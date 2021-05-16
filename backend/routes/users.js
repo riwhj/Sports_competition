@@ -18,6 +18,8 @@ router.route('/userlist').get((req, res) => {
 
 router.route('/add').post((req, res) => {
   const username = req.body.username;
+  const password = req.body.password;
+  const fullname = req.body.fullname;
   const sex = req.body.sex;
   const phone =req.body.phone;
   const email = req.body.email;
@@ -25,6 +27,8 @@ router.route('/add').post((req, res) => {
 
   const newUser = new User({
     username,
+    password,
+    fullname,
     sex,
     phone,
     email,
@@ -52,6 +56,8 @@ router.route('/update/:id').post((req, res) => {
   User.findById(req.params.id)
     .then(user => {
       user.username = req.body.username;
+      user.password = req.body.password;
+      user.fullname = req.body.fullname;
       user.sex = req.body.sex;
       user.phone = req.body.phone;
       user.email = req.body.email;

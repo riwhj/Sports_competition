@@ -76,26 +76,17 @@ export default class Navbar extends Component {
                   </Link>
                 </li>
 
-                {/* <li class="nav-item">
+                <li class="nav-item">
                   <Link
                     to="/user"
                     smooth={true}
                     duration={500}
                     class="nav-link js-scroll-trigger"
                   >
-                    Create User
+                    Register
                   </Link>
-                </li> */}
-                {/* <li class="nav-item">
-                  <Link
-                    to="/userlist"
-                    smooth={true}
-                    duration={500}
-                    class="nav-link js-scroll-trigger"
-                  >
-                    Users
-                  </Link>
-                </li> */}
+                </li>
+              
               </ul>
             </div>
           </div>

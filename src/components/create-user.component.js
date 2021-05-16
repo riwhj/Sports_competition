@@ -6,25 +6,23 @@ export default class CreateUser extends Component {
     super(props);
 
     this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+    this.onChangeFullname = this.onChangeFullname.bind(this);
     this.onChangeSex = this.onChangeSex.bind(this);
     this.onChangePhone = this.onChangePhone.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
-    this.onChangeCetagory = this.onChangeCetagory.bind(this);
-    this.onChangeName = this.onChangeName.bind(this);
-    this.onChangeImage = this.onChangeImage.bind(this);
-    this.onChangePlace = this.onChangePlace.bind(this);
+    
     // this.onChangeRunningname = this.onChangeRunningname.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       username: "",
+      password:"",
+      fullname:"",
       sex: "",
       phone: "",
       email: "",
-      cetagory:"",
-      name: "",
-      image: "",
-      place: "",
+      
       // runningname:'',
       // runningname: []
     };
@@ -50,6 +48,16 @@ export default class CreateUser extends Component {
       username: e.target.value,
     });
   }
+  onChangePassword(e) {
+    this.setState({
+      password: e.target.value,
+    });
+  }
+  onChangeFullname(e) {
+    this.setState({
+      fullname: e.target.value,
+    });
+  }
   onChangeSex(e) {
     this.setState({
       sex: e.target.value,
@@ -71,13 +79,12 @@ export default class CreateUser extends Component {
 
     const user = {
       username: this.state.username,
+      password: this.state.password,
+      fullname: this.state.name,
       sex: this.state.sex,
       phone: this.state.phone,
       email: this.state.email,
-      cetagory: this.state.cetagory,
-      name: this.state.name,
-      image: this.state.image,
-      place: this.state.place,
+     
       //   runningname: this.state.runningname
     };
 
@@ -87,7 +94,7 @@ export default class CreateUser extends Component {
       .post("http://localhost:5000/users/add", user)
       .then((res) => console.log(res.data));
 
-    window.location = "/userlist";
+    window.location = "/profile";
   }
 
   render() {
@@ -99,31 +106,60 @@ export default class CreateUser extends Component {
               <div class="row">
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
-                    <label>Username: </label>
+                    <label>name: </label>
                     <input
                       type="text"
                       required
                       className="form-control"
-                      value={this.state.username}
-                      onChange={this.onChangeUsername}
+                      value={this.state.fullname}
+                      onChange={this.onChangeFullname}
                       placeholder="กรุณากรอกชื่อ-นามสกุล"
                     />
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
-                    <label>sex: </label>
+                    <label>Sex : </label>
                     <input
                       type="text"
                       required
                       className="form-control"
                       value={this.state.sex}
                       onChange={this.onChangeSex}
-                      placeholder="กรุณากรอกเพศ"
+                      placeholder="กรุณากรอกชื่อ-นามสกุล"
                     />
                   </div>
                 </div>
-              </div>
+                </div>
+                <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                  <div className="form-group">
+                    <label>Username : </label>
+                    <input
+                      type="text"
+                      required
+                      className="form-control"
+                      value={this.state.username}
+                      onChange={this.onChangeUsername}
+                      placeholder="กรุณากรอก Username"
+                    />
+                  </div>
+                </div>
+              
+                <div class="col-xl-6 col-lg-6">
+                  <div className="form-group">
+                    <label>password: </label>
+                    <input
+                      type="text"
+                      required
+                      className="form-control"
+                      value={this.state.password}
+                      onChange={this.onChangePassword}
+                      placeholder="กรุณากรอก password"
+                    />
+                  </div>
+                </div>
+                </div>
               <div class="row">
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">

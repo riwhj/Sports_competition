@@ -15,6 +15,9 @@ import Footer from "./components/Footer";
 import Search from "./components/search.component";
 import login1 from "./components/login1";
 import register from "./components/register";
+import EditUser from "./components/edit-user.component";
+import CreateUser from "./components/create-user.component";
+
 
 function App() {
   return (
@@ -31,6 +34,8 @@ function App() {
       <Route path="/search" component={Search} />
       <Route path="/login" component={login1} />
       <Route path="/register" component={register} />
+      <Route path="/user" component={CreateUser} />
+      <Route path="/edituser/:id" component={EditUser} />
 
       <br />
       {/* <Signup /> */}

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const User = props => (
   <tr>
-    <td>{props.user.username}</td>
+    <td>{props.user.fullname}</td>
     <td>{props.user.sex}</td>
     <td>{props.user.phone}</td>
     <td>{props.user.email}</td>
@@ -53,17 +53,20 @@ export default class profile extends Component {
       <>
       <div class="container">
           <div class="form-group">
+        <table className="table">
+          <thead className="thead-light">
+            <tr>
               <th>USERNAME</th>
-              <br></br>
               <th>SEX</th>
-              <br></br>
               <th>PHONE</th>
-              <br></br>
               <th>EMAIL</th>
-              <br></br>
-              <th>EXERCISES</th>
-              <br></br>
-              
+              <th>ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody>
+            { this.userList() }
+          </tbody>
+        </table>
         </div>
         </div>
       </>
