@@ -110,8 +110,8 @@ export default class showTravel extends Component {
        <section class="projects-section bg-light" id="projects">
       <div class="row align-items-center no-gutters mb-4 mb-lg-5">
         <div class ="row">
-    <div class="col-xl-5 col-lg-5">
-      <img class="img-fluid mb-6 mb-lg-0" src={this.state.image} alt="" />
+    <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+      <img class="img-fluid mb-12 mb-lg-12" src={this.state.image} alt="" />
     </div>
     <div class="col-xl-7 col-lg-7">
       <div class="featured-text text-center text-lg-left">
