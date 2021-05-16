@@ -10,7 +10,7 @@ router.route('/').get((req, res) => {
 
 
 
-router.route('/userlist').get((req, res) => {
+router.route('/profile').get((req, res) => {
   User.find()
     .then(users => res.json(users))
     .catch(err => res.status(400).json('Error: ' + err));
@@ -55,8 +55,8 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
   User.findById(req.params.id)
     .then(user => {
-      user.username = req.body.username;
-      user.password = req.body.password;
+      // user.username = req.body.username;
+      // user.password = req.body.password;
       user.fullname = req.body.fullname;
       user.sex = req.body.sex;
       user.phone = req.body.phone;

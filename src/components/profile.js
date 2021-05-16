@@ -9,7 +9,7 @@ const User = props => (
     <td>{props.user.phone}</td>
     <td>{props.user.email}</td>
     <td>
-      <Link to={"/edituser/"+props.user._id}>edit</Link> | <a href="#" onClick={() => { props.deleteUser(props.user._id) }}>delete</a>
+      <Link to={"/edituser/"+props.user._id}>edit</Link>
     </td>
   </tr>
 )
