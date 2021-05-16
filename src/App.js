@@ -14,6 +14,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Search from "./components/search.component";
 import login1 from "./components/login1";
+import register from "./components/register";
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
       <Route path="/showcompetition/:id" component={showtravel} />
       <Route path="/search" component={Search} />
       <Route path="/login" component={login1} />
+      <Route path="/register" component={register} />
+
       <br />
       {/* <Signup /> */}
       {/* <Contact /> */}
