@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Link } from "react-router-dom";
 
 export default class EditExercise extends Component {
   constructor(props) {
@@ -216,7 +217,11 @@ export default class EditExercise extends Component {
                   type="submit"
                   value="submit"
                   className="btn btn-primary"
-                />
+                />{" "}
+                |{" "}
+                <Link class="btn btn-danger js-scroll-trigger" to={"/travel"}>
+                  Cancel
+                </Link>
               </div>
             </form>
           </div>

@@ -75,17 +75,6 @@ export default class Navbar extends Component {
                     Search
                   </Link>
                 </li>
-
-                <li class="nav-item">
-                  <Link
-                    to="/user"
-                    smooth={true}
-                    duration={500}
-                    class="nav-link js-scroll-trigger"
-                  >
-                    Register
-                  </Link>
-                </li>
               
               </ul>
             </div>

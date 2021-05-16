@@ -29,7 +29,7 @@ const Exercise = (props) => (
         </Link>{" "}
         |{" "}
         <a
-          class="btn btn-primary js-scroll-trigger"
+          class="btn btn-danger js-scroll-trigger"
           href="#"
           onClick={() => {
             props.deleteExercise(props.exercise._id);

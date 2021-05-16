@@ -10,12 +10,12 @@ export default class Search extends Component {
           <div className="col">
             <div className="form-group">
               <label>Competition type: </label>
-              <input
-                type="text"
-                required
-                className="form-control"
-                placeholder="กรุณากรอกประเภทการแข่งขัน"
-              />
+                <input
+                  type="text"
+                  required
+                  className="form-control"
+                  placeholder="กรุณากรอกประเภทการแข่งขัน"
+                />
             </div>
           </div>
         </div>

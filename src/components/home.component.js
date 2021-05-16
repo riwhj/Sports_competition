@@ -18,6 +18,10 @@ const Exercise = (props) => (
         <br />
         <Link class="btn btn-primary js-scroll-trigger" to={"/showcompetition/" + props.exercise._id}>
           ShowDetail
+        </Link>{" "}
+        |{" "}
+        <Link class="btn btn-primary js-scroll-trigger" to={" "}>
+          Apply
         </Link>
       </div>
     </div>

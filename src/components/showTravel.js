@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default class showTravel extends Component {
@@ -107,28 +107,32 @@ export default class showTravel extends Component {
   render() {
     return (
       <>
-       <section class="projects-section bg-light" id="projects">
-      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-        <div class ="row">
-    <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-      <img class="img-fluid mb-12 mb-lg-12" src={this.state.image} alt="" />
-    </div>
-    <div class="col-xl-7 col-lg-7">
-      <div class="featured-text text-center text-lg-left">
-        <h4 class="text-black">{this.state.name}</h4>
-        <p class="mb-0 text-black-60">The place: {this.state.place}</p>
-        <p class="mb-0 text-black-60">Organizer: {this.state.organizer}</p>
-        <p class="mb-0 text-black-60">Date: {this.state.date}</p>
-        <p class="mb-0 text-black-60">Detail: {this.state.detail}</p>
-        <br />
-        {/* <Link class="btn btn-primary js-scroll-trigger" to={"/getLocation/" + props.exercise._id}>
-          ShowDetail
-        </Link> */}
+      <div class="container">
+      <div class="collection_section_2">
+        <div class="row">
+          <div class="col-md-12">
+          <div class="about-img">
+          <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+            <img class="img-fluid mb-12 mb-lg-12" src={this.state.image} alt="" />
+          </div>
+          <div class="col-xl-6 col-lg-6">
+          <div class="featured-text text-center text-lg-left">
+            <h4 class="text-black">{this.state.name}</h4>
+            <p class="mb-0 text-black-60">The place: {this.state.place}</p>
+            <p class="mb-0 text-black-60">Organizer: {this.state.organizer}</p>
+            <p class="mb-0 text-black-60">Date: {this.state.date}</p>
+            <p class="mb-0 text-black-60">Detail: {this.state.detail}</p>
+            <br />
+            <Link class="btn btn-primary js-scroll-trigger" to={" "}>
+              Apply
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   </div>
-  </section>
+  </div>
 
       </>
     );

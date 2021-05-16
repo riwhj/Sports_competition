@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default class EditUser extends Component {
   constructor(props) {
@@ -148,7 +149,11 @@ export default class EditUser extends Component {
                     type="submit"
                     value="submit"
                     className="btn btn-primary"
-                  />
+                  />{" "}
+                  |{" "}
+                  <Link class="btn btn-danger js-scroll-trigger" to={"/profile"}>
+                    Cancel
+                  </Link>
                 </div>
               </div>
             </form>
