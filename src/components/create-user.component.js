@@ -103,64 +103,58 @@ export default class CreateUser extends Component {
         <div class="container">
           <div class="form-group">
             <form onSubmit={this.onSubmit}>
-              <div class="row">
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
-                    <label>name: </label>
+                    <label>Username: </label>
                     <input
                       type="text"
                       required
                       className="form-control"
                       value={this.state.fullname}
                       onChange={this.onChangeFullname}
-                      placeholder="กรุณากรอกชื่อ-นามสกุล"
+                      placeholder="กรุณากรอกชื่อผู้ใช้"
                     />
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
-                    <label>Sex : </label>
+                    <label>Password : </label>
                     <input
                       type="text"
                       required
                       className="form-control"
                       value={this.state.sex}
                       onChange={this.onChangeSex}
-                      placeholder="กรุณากรอกชื่อ-นามสกุล"
+                      placeholder="กรุณากรอกรหัสผ่าน"
                     />
                   </div>
                 </div>
-                </div>
-                <div class="row">
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
-                    <label>Username : </label>
+                    <label>Fullname : </label>
                     <input
                       type="text"
                       required
                       className="form-control"
                       value={this.state.username}
                       onChange={this.onChangeUsername}
-                      placeholder="กรุณากรอก Username"
+                      placeholder="กรุณากรอกชื่อ-นามสกุล"
                     />
                   </div>
                 </div>
-              
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
-                    <label>password: </label>
+                    <label>Email: </label>
                     <input
                       type="text"
                       required
                       className="form-control"
                       value={this.state.password}
                       onChange={this.onChangePassword}
-                      placeholder="กรุณากรอก password"
+                      placeholder="กรุณากรอกอีเมล"
                     />
                   </div>
                 </div>
-                </div>
-              <div class="row">
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
                     <label>Phone Number: </label>
@@ -176,26 +170,23 @@ export default class CreateUser extends Component {
                 </div>
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
-                    <label>Email: </label>
+                    <label>Sex: </label>
                     <input
                       type="text"
                       required
                       className="form-control"
                       value={this.state.email}
                       onChange={this.onChangeEmail}
-                      placeholder="กรุณากรอกอีเมล"
+                      placeholder="กรุณากรอกเพศ"
                     />
                   </div>
                 </div>
-              </div>
-              <div class="row">
                 <div className="form-group">
                   <input
                     type="submit"
                     value="submit"
                     className="btn btn-primary"
                   />
-                </div>
               </div>
             </form>
           </div>
