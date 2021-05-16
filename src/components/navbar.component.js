@@ -55,7 +55,17 @@ export default class Navbar extends Component {
                     Create Travels
                   </Link>
                 </li>
-                
+                <li class="nav-item">
+                  <Link
+                    to="/search"
+                    smooth={true}
+                    duration={500}
+                    class="nav-link js-scroll-trigger"
+                  >
+                    Search
+                  </Link>
+                </li>
+
                 {/* <li class="nav-item">
                   <Link
                     to="/user"
@@ -76,10 +86,7 @@ export default class Navbar extends Component {
                     Users
                   </Link>
                 </li> */}
-                
               </ul>
-              
-              
             </div>
           </div>
         </nav>

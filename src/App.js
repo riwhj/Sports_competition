@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar.component";
 import Home from "./components/home.component";
@@ -11,25 +11,25 @@ import Header from "./components/Header";
 import Signup from "./components/Signup";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-
+import Search from "./components/search.component";
 
 function App() {
   return (
-   <Router>
+    <Router>
       <Navbar />
       <Header />
-      <br/>
+      <br />
       <Route path="/" exact component={Home} />
       <Route path="/travel" exact component={LocationList} />
       <Route path="/edit/:id" component={EditExercise} />
       <Route path="/createLocation" component={CreateLocation} />
       <Route path="/showcompetition/:id" component={showtravel} />
-      <br/>
+      <Route path="/search" component={Search} />
+      <br />
       {/* <Signup /> */}
       {/* <Contact /> */}
       <Footer />
-     
-   </Router> 
+    </Router>
   );
 }
 
