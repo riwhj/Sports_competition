@@ -16,8 +16,7 @@ export default class CreateLocation extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      
-      cetagory:"",
+      cetagory: "",
       name: "",
       image: "",
       place: "",
@@ -84,6 +83,11 @@ export default class CreateLocation extends Component {
     window.location = "/travel";
   }
 
+  onCancle(e) {
+    e.preventDefault();
+    window.location = "/travel";
+  }
+
   render() {
     return (
       <>
@@ -91,7 +95,7 @@ export default class CreateLocation extends Component {
           <div class="form-group">
             <form onSubmit={this.onSubmit}>
               <div class="row">
-              <div class="col-xl-6 col-lg-6">
+                <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
                     <label>Competition type: </label>
                     <input
@@ -117,8 +121,8 @@ export default class CreateLocation extends Component {
                     />
                   </div>
                 </div>
-                </div>
-                <div class="row">
+              </div>
+              <div class="row">
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
                     <label>The place: </label>
@@ -132,8 +136,7 @@ export default class CreateLocation extends Component {
                     />
                   </div>
                 </div>
-            
-              
+
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
                     <label>organizer: </label>
@@ -147,7 +150,7 @@ export default class CreateLocation extends Component {
                     />
                   </div>
                 </div>
-                </div>
+              </div>
               <div class="row">
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
@@ -173,7 +176,7 @@ export default class CreateLocation extends Component {
                     </div>
                   </div>
                 </div>
-            
+
                 <div class="col-m-12 col-lg-12">
                   <div className="form-group">
                     <label>Detail: </label>
@@ -190,13 +193,25 @@ export default class CreateLocation extends Component {
                   </div>
                 </div>
               </div>
-            
-              <div className="form-group">
-                <input
-                  type="submit"
-                  value="submit"
-                  className="btn btn-primary"
-                />
+              <div className="row">
+                <div className="col">
+                  <div className="form-group">
+                    <input
+                      type="submit"
+                      value="submit"
+                      className="btn btn-primary"
+                    />
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group">
+                    <a
+                      href="/travel"
+                      value="cancle"
+                      className="btn btn-danger"
+                    />
+                  </div>
+                </div>
               </div>
             </form>
           </div>
