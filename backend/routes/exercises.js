@@ -9,6 +9,12 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/login').get((req, res) => {
+  Exercise.find()
+    .then(exercises => res.json(exercises))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 router.route('/travel').get((req, res) => {
   Exercise.find()
     .then(exercises => res.json(exercises))
@@ -63,6 +69,12 @@ router.route('/showcompetition:id').post((req, res) => {
 });
 
 router.route('/:id').delete((req, res) => {
+  Exercise.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Exercise deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/').delete((req, res) => {
   Exercise.findByIdAndDelete(req.params.id)
     .then(() => res.json('Exercise deleted.'))
     .catch(err => res.status(400).json('Error: ' + err));

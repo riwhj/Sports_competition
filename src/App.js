@@ -12,6 +12,7 @@ import Signup from "./components/Signup";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Search from "./components/search.component";
+import login1 from "./components/login1";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/createLocation" component={CreateLocation} />
       <Route path="/showcompetition/:id" component={showtravel} />
       <Route path="/search" component={Search} />
+      <Route path="/login" component={login1} />
       <br />
       {/* <Signup /> */}
       {/* <Contact /> */}
