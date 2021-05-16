@@ -5,7 +5,7 @@ export default class EditUser extends Component {
   constructor(props) {
     super(props);
 
-    this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangeFullname = this.onChangeFullname.bind(this);
     this.onChangeSex = this.onChangeSex.bind(this);
     this.onChangePhone = this.onChangePhone.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
@@ -13,7 +13,7 @@ export default class EditUser extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      username: "",
+      fullname: "",
       sex: "",
       phone: "",
       email: "",
@@ -27,7 +27,7 @@ export default class EditUser extends Component {
       .get("http://localhost:5000/users/" + this.props.match.params.id)
       .then((response) => {
         this.setState({
-          username: response.data.username,
+          fullname: response.data.fullname,
           sex: response.data.sex,
           phone: response.data.phone,
           email: response.data.email,
@@ -39,9 +39,9 @@ export default class EditUser extends Component {
   }
 
 
-  onChangeUsername(e) {
+  onChangeFullname(e) {
     this.setState({
-      username: e.target.value,
+      fullname: e.target.value,
     });
   }
   onChangeSex(e) {
@@ -64,7 +64,7 @@ export default class EditUser extends Component {
     e.preventDefault();
 
     const user = {
-      username: this.state.username,
+      fullname: this.state.fullname,
       sex: this.state.sex,
       phone: this.state.phone,
       email: this.state.email,
@@ -77,7 +77,7 @@ export default class EditUser extends Component {
       .post("http://localhost:5000/users/update/" + this.props.match.params.id,user)
       .then((res) => console.log(res.data));
 
-    window.location = "/userlist";
+    window.location = "/profile";
   }
 
   render() {
@@ -89,13 +89,13 @@ export default class EditUser extends Component {
               <div class="row">
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
-                    <label>Username: </label>
+                    <label>Name: </label>
                     <input
                       type="text"
                       required
                       className="form-control"
-                      value={this.state.username}
-                      onChange={this.onChangeUsername}
+                      value={this.state.fullname}
+                      onChange={this.onChangeFullname}
                       placeholder="กรุณากรอกชื่อ-นามสกุล"
                     />
                   </div>
