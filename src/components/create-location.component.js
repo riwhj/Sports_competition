@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Link } from "react-router-dom";
+
 
 export default class CreateLocation extends Component {
   constructor(props) {
@@ -14,6 +16,7 @@ export default class CreateLocation extends Component {
     this.onChangeDate = this.onChangeDate.bind(this);
     this.onChangeDetail = this.onChangeDetail.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onCancel = this.onCancel.bind(this);
 
     this.state = {
       cetagory: "",
@@ -83,7 +86,7 @@ export default class CreateLocation extends Component {
     window.location = "/travel";
   }
 
-  onCancle(e) {
+  onCancel(e) {
     e.preventDefault();
     window.location = "/travel";
   }
@@ -94,6 +97,7 @@ export default class CreateLocation extends Component {
         <div class="container">
           <div class="form-group">
             <form onSubmit={this.onSubmit}>
+            <form onCancel={this.onCancel}>
               <div class="row">
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
@@ -200,19 +204,15 @@ export default class CreateLocation extends Component {
                       type="submit"
                       value="submit"
                       className="btn btn-primary"
-                    />
-                  </div>
-                </div>
-                <div className="col">
-                  <div className="form-group">
-                    <a
-                      href="/travel"
-                      value="cancle"
-                      className="btn btn-danger"
-                    />
+                    />{" "}
+                    |{" "}
+                    <Link class="btn btn-danger js-scroll-trigger" to={"/travel"}>
+                      Cancel
+                    </Link>
                   </div>
                 </div>
               </div>
+              </form>
             </form>
           </div>
         </div>
