@@ -8,6 +8,7 @@ import LocationList from "./components/locationlist.component";
 import EditExercise from "./components/edit-exercise.component";
 import CreateLocation from "./components/create-location.component";
 import Header from "./components/Header";
+import profile from "./components/profile";
 import Signup from "./components/Signup";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -22,6 +23,7 @@ function App() {
       <br />
       <Route path="/" exact component={Home} />
       <Route path="/travel" exact component={LocationList} />
+      <Route path="/profile" exact component={profile} />
       <Route path="/edit/:id" component={EditExercise} />
       <Route path="/createLocation" component={CreateLocation} />
       <Route path="/showcompetition/:id" component={showtravel} />
