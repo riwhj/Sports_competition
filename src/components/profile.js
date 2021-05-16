@@ -53,20 +53,17 @@ export default class profile extends Component {
       <>
       <div class="container">
           <div class="form-group">
-        <table className="table">
-          <thead className="thead-light">
-            <tr>
               <th>USERNAME</th>
+              <br></br>
               <th>SEX</th>
+              <br></br>
               <th>PHONE</th>
+              <br></br>
               <th>EMAIL</th>
-              <th>ACTIONS</th>
-            </tr>
-          </thead>
-          <tbody>
-            { this.userList() }
-          </tbody>
-        </table>
+              <br></br>
+              <th>EXERCISES</th>
+              <br></br>
+              
         </div>
         </div>
       </>
