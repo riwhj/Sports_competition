@@ -72,10 +72,9 @@ export default class Navbar extends Component {
                     duration={500}
                     class="nav-link js-scroll-trigger"
                   >
-                    Search
+                    List
                   </Link>
                 </li>
-              
               </ul>
             </div>
           </div>
