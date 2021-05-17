@@ -107,7 +107,6 @@ export default class Home extends Component {
           <input
             type="text"
             placeholder="Search exercise..."
-            key="random1"
             name=""
             onChange={this.setSearch}
           />{" "}
