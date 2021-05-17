@@ -111,7 +111,7 @@ export default class Home extends Component {
             onChange={this.setSearch}
           />{" "}
           <button className="btn btn-primary" onClick={() => this.confirm()}>
-            <span className="glyphicon glyphicon-search"></span>
+            <span className="glyphicon glyphicon-search">search</span>
           </button>
         </div>
         <section className="projects-section bg-light" id="projects">
