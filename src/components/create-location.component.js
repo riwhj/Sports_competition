@@ -15,7 +15,7 @@ export default class CreateLocation extends Component {
     this.onChangeDate = this.onChangeDate.bind(this);
     this.onChangeDetail = this.onChangeDetail.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.onCancel = this.onCancel.bind(this);
+  
 
     this.state = {
       cetagory: "",
@@ -85,10 +85,6 @@ export default class CreateLocation extends Component {
     window.location = "/travel";
   }
 
-  onCancel(e) {
-    e.preventDefault();
-    window.location = "/travel";
-  }
 
   render() {
     return (

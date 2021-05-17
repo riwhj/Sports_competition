@@ -2,6 +2,7 @@ const router = require("express").Router();
 let Cards = require("../models/cards.model");
 
 router.route("/listex").post((req, res) => {
+  
   const cetagory = req.body.cetagory;
   const name = req.body.name;
   const image = req.body.image;

@@ -56,11 +56,17 @@ export default class profile extends Component {
         <table className="table">
           <thead className="thead-light">
             <tr>
+            <th>cetagory</th>
+            <th>รายการการแข่งขัน</th>
+            <th>สถานที่</th>
+            <th>ผู้จัด</th>
+            <th>dateที่จัดงาน</th>
               <th>USERNAME</th>
+              <th>BD</th>
               <th>SEX</th>
               <th>PHONE</th>
               <th>EMAIL</th>
-              <th>ACTIONS</th>
+             
             </tr>
           </thead>
           <tbody>
