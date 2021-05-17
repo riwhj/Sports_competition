@@ -32,8 +32,8 @@ const Exercise = (props) => (
           class="btn btn-danger js-scroll-trigger"
           href="#"
           onClick={() => {
+            if (window.confirm('Are you sure you wish to delete this item?'))
             props.deleteExercise(props.exercise._id);
-            alert("Are you sure to delete data!");
           }}
         >
           delete
