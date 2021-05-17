@@ -101,7 +101,7 @@ router.route("/search/:id").get((req, res) => {
   Exercise.find({
     $or: [
       { name: new RegExp(req.params.id, "i") },
-      { catagory: new RegExp(req.params.id, "i") },
+      { cetagory: new RegExp(req.params.id, "i") },
     ],
   })
     .then((exercises) => res.json(exercises))

@@ -4,7 +4,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from "react-router-dom";
 
-
 export default class CreateLocation extends Component {
   constructor(props) {
     super(props);
@@ -97,7 +96,6 @@ export default class CreateLocation extends Component {
         <div class="container">
           <div class="form-group">
             <form onSubmit={this.onSubmit}>
-            <form onCancel={this.onCancel}>
               <div class="row">
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
@@ -206,13 +204,15 @@ export default class CreateLocation extends Component {
                       className="btn btn-primary"
                     />{" "}
                     |{" "}
-                    <Link class="btn btn-danger js-scroll-trigger" to={"/travel"}>
+                    <Link
+                      class="btn btn-danger js-scroll-trigger"
+                      to={"/travel"}
+                    >
                       Cancel
                     </Link>
                   </div>
                 </div>
               </div>
-              </form>
             </form>
           </div>
         </div>

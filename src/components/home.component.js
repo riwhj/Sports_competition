@@ -27,8 +27,8 @@ const Exercise = (props) => (
           ShowDetail
         </Link>{" "}
         |{" "}
-        <Link class="btn btn-primary js-scroll-trigger" to={" "}>
-          Apply
+        <Link to={"/search"}>
+          <button class="btn btn-primary js-scroll-trigger">Apply</button>
         </Link>
       </div>
     </div>
