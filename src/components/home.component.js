@@ -88,14 +88,16 @@ export default class Home extends Component {
   }
   confirm() {
     const { search } = this.state;
-    // axios.get("http://localhost:3001/product/" + search).then((res) => {
-    //   {
-    //     this.setState({ travel: res.data });
-    //   }
-    //   console.log(res.data);
-    // });
     console.log(search);
-    this.setState({ search: "" });
+    axios
+      .get("http://localhost:5000/exercises/search/" + search)
+      .then((response) => {
+        this.setState({ exercises: response.data });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    console.log(search);
   }
 
   render() {
