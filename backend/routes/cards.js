@@ -35,3 +35,4 @@ router.route("/listex").post((req, res) => {
     .then(() => res.json("add card!"))
     .catch((err) => res.status(400).json("Error: " + err));
 });
+module.exports = router;
