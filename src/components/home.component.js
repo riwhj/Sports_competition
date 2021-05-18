@@ -198,7 +198,7 @@ export default class Home extends Component {
                 <span>search</span>
               </button>
             </div>
-          </div>
+          </div><br/>
         </div>
 
         {this.state.check == true && (
