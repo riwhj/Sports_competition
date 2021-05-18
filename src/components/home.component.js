@@ -104,15 +104,25 @@ export default class Home extends Component {
     return (
       <>
         <div className="container">
-          <input
-            type="text"
-            placeholder="Search exercise..."
-            name=""
-            onChange={this.setSearch}
-          />{" "}
-          <button className="btn btn-primary" onClick={() => this.confirm()}>
-            <span className="glyphicon glyphicon-search">search</span>
-          </button>
+          <div className="row">
+            <div className="col-10">
+              <input
+                class="form-control mr-sm-2"
+                type="text"
+                placeholder="Search exercise..."
+                name=""
+                onChange={this.setSearch}
+              />{" "}
+            </div>
+            <div className="col-2">
+              <button
+                className="btn btn-primary"
+                onClick={() => this.confirm()}
+              >
+                <span>search</span>
+              </button>
+            </div>
+          </div>
         </div>
         <section className="projects-section bg-light" id="projects">
           <div className="container">{this.exerciseList()}</div>

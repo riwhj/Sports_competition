@@ -62,7 +62,7 @@ export default class Navbar extends Component {
                     duration={500}
                     class="nav-link js-scroll-trigger"
                   >
-                    Create Travels
+                    Create Exercise
                   </Link>
                 </li>
                 <li class="nav-item">

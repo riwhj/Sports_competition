@@ -15,7 +15,6 @@ export default class CreateLocation extends Component {
     this.onChangeDate = this.onChangeDate.bind(this);
     this.onChangeDetail = this.onChangeDetail.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-  
 
     this.state = {
       cetagory: "",
@@ -85,7 +84,6 @@ export default class CreateLocation extends Component {
     window.location = "/travel";
   }
 
-
   render() {
     return (
       <>
@@ -95,7 +93,7 @@ export default class CreateLocation extends Component {
               <div class="row">
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
-                    <label>Competition type: </label>
+                    <label>Cetagory: </label>
                     <input
                       type="text"
                       required
@@ -108,7 +106,7 @@ export default class CreateLocation extends Component {
                 </div>
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
-                    <label>Province: </label>
+                    <label>Name: </label>
                     <input
                       type="text"
                       required
