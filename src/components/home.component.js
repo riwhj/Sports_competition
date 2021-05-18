@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Exercise = (props) => (
   <div class="row align-items-center no-gutters mb-4 mb-lg-5">
@@ -27,9 +29,7 @@ const Exercise = (props) => (
           ShowDetail
         </Link>{" "}
         |{" "}
-        <Link to={"/search"}>
-          <button class="btn btn-primary js-scroll-trigger">Apply</button>
-        </Link>
+          <button class="btn btn-primary js-scroll-trigger" onClick={props.apply(props)}>Apply</button>
       </div>
     </div>
   </div>
@@ -44,10 +44,61 @@ export default class Home extends Component {
     this.state = {
       exercises: [],
       search: "",
+      cetagory:"",
+      name: "",
+      place: "",
+      organizer: "",
+      date: "",
+      fullname:"",
+      sex: "",
+      born:"",
+      phone: "",
+      email: "",
+      check: false,
     };
     this.setSearch = this.setSearch.bind(this);
     this.confirm = this.confirm.bind(this);
+    this.apply = this.apply.bind(this);
+
   }
+  apply(props){
+    this.setState({check:true});
+    console.log(props);
+    this.setState({cetagory:props.exercise.cetagory});
+    this.setState({name:props.exercise.name});
+    this.setState({place:props.exercise.place});
+    this.setState({organizer:props.exercise.organizer});
+    this.setState({date:props.exercise.date});
+  
+  }
+  onSubmit(e) {
+    e.preventDefault();
+
+    const exercise = {
+      cetagory: this.state.cetagory,
+      name: this.state.name,
+      place: this.state.place,
+      organizer: this.state.organizer,
+      date: this.state.date,
+
+      fullname:e.target.fullname,
+      sex: e.target.sex,
+      born:e.target.born,
+      phone: e.target.phone,
+      email: e.target.email,
+     
+
+    };
+    console.log(exercise);
+
+    axios
+      .post("http://localhost:5000/exercises/search", exercise)
+      .then((res) => console.log(res.data));
+
+    window.location = "/search";
+    this.setState({check:false})
+  }
+
 
   componentDidMount() {
     axios
@@ -58,6 +109,7 @@ export default class Home extends Component {
       .catch((error) => {
         console.log(error);
       });
+      
   }
 
   deleteExercise(id) {
@@ -76,6 +128,7 @@ export default class Home extends Component {
         <Exercise
           exercise={currentexercise}
           deleteExercise={this.deleteExercise}
+          apply={this.apply}
           key={currentexercise._id}
         />
       );
@@ -126,8 +179,96 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
+
+        {this.state.check==true&&<div class="form-group">
+        <form onSubmit={this.onSubmit}>
+              <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                  <div className="form-group">
+                    <label>Fullname : </label>
+                    <input
+                    name="fullname"
+                      type="text"
+                      required
+                      className="form-control"
+                      // value={this.state.username}
+                      // onChange={this.onChangeUsername}
+                      placeholder="กรุณากรอกชื่อ-นามสกุล"
+                    />
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3">
+                  <div className="form-group">
+                    <label>BD: </label>
+                    <input
+                    name="born"
+                      type="text"
+                      required
+                      className="form-control"
+                      // value={this.state.username}
+                      // onChange={this.onChangeUsername}
+                      placeholder="กรุณากรอกชื่อ-นามสกุล"
+                    />
+        
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3">
+                  <div className="form-group">
+                    <label>Sex: </label>
+                    <input
+                    name="sex"
+                      type="text"
+                      required
+                      className="form-control"
+                      placeholder="กรุณากรอกเพศ"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                  <div className="form-group">
+                    <label>Email: </label>
+                    <input
+                    name="email"
+                      type="text"
+                      required
+                      className="form-control"
+                      // value={this.state.password}
+                      // onChange={this.onChangePassword}
+                      placeholder="กรุณากรอกอีเมล"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-xl-6 col-lg-6">
+                  <div className="form-group">
+                    <label>Phone Number: </label>
+                    <input
+                    name ="phone"
+                      type="text"
+                      required
+                      className="form-control"
+                      // value={this.state.phone}
+                      // onChange={this.onChangePhone}
+                      placeholder="กรุณากรอกเบอร์โทรศัพท์"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="form-group">
+                <input
+                  type="submit"
+                  value="submit"
+                  className="btn btn-primary"
+                />
+              </div>
+            </form>
+            </div>}
+
         <section className="projects-section bg-light" id="projects">
-          <div className="container">{this.exerciseList()}</div>
+        {this.state.check==false&&<div className="container">{this.exerciseList()}</div>}
         </section>
       </>
     );

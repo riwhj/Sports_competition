@@ -13,7 +13,6 @@ import Signup from "./components/Signup";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Search from "./components/card.component";
-import login1 from "./components/login1";
 import register from "./components/register";
 import EditUser from "./components/edit-user.component";
 import CreateUser from "./components/create-user.component";
@@ -32,7 +31,6 @@ function App() {
       <Route path="/createLocation" component={CreateLocation} />
       <Route path="/showcompetition/:id" component={showtravel} />
       <Route path="/search" component={Search} />
-      <Route path="/login" component={login1} />
       <Route path="/register" component={register} />
       <Route path="/user" component={CreateUser} />
       <Route path="/edituser/:id" component={EditUser} />
