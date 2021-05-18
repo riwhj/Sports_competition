@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import './Login.css';
 const Cards = (props) => (
   <tr>
     <td>{props.cards.cetagory}</td>
@@ -94,7 +94,7 @@ export default class profile extends Component {
     return (
       <>
         <div class="container">
-          <h1>List Page</h1>
+          <h1 className="h1">List Page</h1>
           <br />
           <div className="row">
             <div className="col-10">
@@ -108,7 +108,7 @@ export default class profile extends Component {
             </div>
             <div className="col-2">
               <button
-                className="btn btn-primary"
+                className="btn btn-primary b"
                 onClick={() => this.confirm()}
               >
                 <span>search</span>

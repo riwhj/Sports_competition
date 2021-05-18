@@ -123,8 +123,8 @@ export default class showTravel extends Component {
             <p class="mb-0 text-black-60">Date: {this.state.date}</p>
             <p class="mb-0 text-black-60">Detail: {this.state.detail}</p>
             <br />
-            <Link class="btn btn-primary js-scroll-trigger" to={" "}>
-              Apply
+            <Link class="btn btn-primary js-scroll-trigger" to={"/"}>
+              Back
             </Link>
           </div>
         </div>

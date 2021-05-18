@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
+import './Login.css';
 import "react-datepicker/dist/react-datepicker.css";
 
 const Exercise = (props) => (
@@ -191,7 +192,7 @@ export default class Home extends Component {
             </div>
             <div className="col-2">
               <button
-                className="btn btn-primary  bsearch"
+                className="btn btn-primary b"
                 onClick={() => this.confirm()}
               >
                 <span>search</span>
