@@ -116,9 +116,11 @@ export default class profile extends Component {
             </div>
           </div>
           <br />
+          <br />
+
           <div class="form-group">
-            <table className="table">
-              <thead className="thead-light">
+            <table class="table table-striped">
+              <thead class="table-dark ">
                 <tr>
                   <th>Cetagory</th>
                   <th>List</th>
@@ -131,7 +133,11 @@ export default class profile extends Component {
                   <th>Email</th>
                 </tr>
               </thead>
-              <tbody>{this.cardsList()}</tbody>
+
+              <tbody class="table table-striped">
+                {this.cardsList()}
+              </tbody>
+
             </table>
           </div>
         </div>
