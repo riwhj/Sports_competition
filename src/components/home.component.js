@@ -115,7 +115,7 @@ export default class Home extends Component {
     console.log(cards);
 
     axios
-      .post("http://localhost:5000/cards/listex", cards)
+      .post("http://localhost:5000/cards/createlistex", cards)
       .then((res) => console.log(res.data));
       this.setState({check:false})
       // window.location = "/profile";
