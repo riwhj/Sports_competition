@@ -108,6 +108,8 @@ export default class EditExercise extends Component {
     return (
       <>
         <div class="container">
+          <h1>Edit Data</h1>
+          <br />
           <div class="form-group">
             <form onSubmit={this.onSubmit}>
               <div class="row">

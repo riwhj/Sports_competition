@@ -88,6 +88,8 @@ export default class CreateLocation extends Component {
     return (
       <>
         <div class="container">
+          <h1>Create Exercise</h1>
+          <br />
           <div class="form-group">
             <form onSubmit={this.onSubmit}>
               <div class="row">

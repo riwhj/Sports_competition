@@ -88,6 +88,10 @@ export default class LocationList extends Component {
   render() {
     return (
       <>
+        <div className="container">
+          <h1>Exercise List</h1>
+          <br />
+        </div>
         <section class="projects-section bg-light" id="projects">
           <div class="container">{this.exerciseList()}</div>
         </section>

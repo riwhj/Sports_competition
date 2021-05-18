@@ -104,6 +104,8 @@ export default class Home extends Component {
     return (
       <>
         <div className="container">
+          <h1>Home</h1>
+          <br />
           <div className="row">
             <div className="col-10">
               <input
