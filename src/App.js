@@ -12,7 +12,6 @@ import profile from "./components/profile";
 import Signup from "./components/Signup";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Search from "./components/card.component";
 import register from "./components/register";
 import EditUser from "./components/edit-user.component";
 import CreateUser from "./components/create-user.component";
@@ -25,12 +24,11 @@ function App() {
       <Header />
       <br />
       <Route path="/" exact component={Home} />
-      <Route path="/travel" exact component={LocationList} />
+      <Route path="/competitions" exact component={LocationList} />
       <Route path="/List" exact component={profile} />
       <Route path="/edit/:id" component={EditExercise} />
       <Route path="/createLocation" component={CreateLocation} />
       <Route path="/showcompetition/:id" component={showtravel} />
-      <Route path="/search" component={Search} />
       <Route path="/register" component={register} />
       <Route path="/user" component={CreateUser} />
       <Route path="/edituser/:id" component={EditUser} />

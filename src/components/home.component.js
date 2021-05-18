@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import './Login.css';
 import "react-datepicker/dist/react-datepicker.css";
+import './Login.css';
 
 const Exercise = (props) => (
+  
   <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+    <div class=" row">
+   
     <div class="col-xl-7 col-lg-7">
       <img class="img-fluid mb-7 mb-lg-0" src={props.exercise.image} alt="" />
     </div>
@@ -14,11 +18,11 @@ const Exercise = (props) => (
       <div class="featured-text text-center text-lg-left">
         <h3 class="text-black">{props.exercise.cetagory}</h3>
         <h4 class="text-black">{props.exercise.name}</h4>
-        <h6 class="mb-0 text-black-60">The place: {props.exercise.place}</h6>
-        <h6 class="mb-0 text-black-60">
+        <h6 class="mb-2 text-black-100">The place: {props.exercise.place}</h6>
+        <h6 class="mb-52text-black-100">
           Organizer: {props.exercise.organizer}
         </h6>
-        <h6 class="mb-0 text-black-60">
+        <h6 class="mb-2 text-black-100">
           Date: {props.exercise.date.substring(0, 10)}
         </h6>
         {/* <p class="mb-0 text-black-60">Detail: {props.exercise.detail}</p> */}
@@ -36,6 +40,7 @@ const Exercise = (props) => (
         >
           Apply
         </button>
+      </div>
       </div>
     </div>
   </div>
@@ -179,6 +184,7 @@ export default class Home extends Component {
     return (
       <>
         <div className="container">
+        {/* <h1 class="h1">APPLY</h1> */}
           <br />
           <div className="row">
             <div className="col-10">
@@ -203,6 +209,7 @@ export default class Home extends Component {
 
         {this.state.check == true && (
           <div class="container">
+             
           <div class="form-group">
             <form onSubmit={this.onSubmit}>
               <div class="row">

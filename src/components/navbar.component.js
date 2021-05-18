@@ -47,7 +47,7 @@ export default class Navbar extends Component {
                 </li>
                 <li class="nav-item">
                   <Link
-                    to="/travel"
+                    to="/competitions"
                     smooth={true}
                     duration={500}
                     class="nav-link js-scroll-trigger"
