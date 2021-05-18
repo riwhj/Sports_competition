@@ -9,8 +9,8 @@ const Exercise = (props) => (
     </div>
     <div class="col-lg-6">
       <div class="project-text w-100 my-auto text-center text-lg-left">
-        <h3 class="text-black">{props.exercise.cetagory}</h3>
-        <h4 class="text-black">{props.exercise.name}</h4>
+        <h2 class="text-black">{props.exercise.cetagory}</h2>
+        <h3 class="text-black">{props.exercise.name}</h3>
         <h6 class="mb-0 text-black-60">The place: {props.exercise.place}</h6>
         <h6 class="mb-0 text-black-60">
           Organizer: {props.exercise.organizer}
@@ -32,8 +32,8 @@ const Exercise = (props) => (
           class="btn btn-danger js-scroll-trigger"
           href="#"
           onClick={() => {
-            if (window.confirm('Are you sure you wish to delete this item?'))
-            props.deleteExercise(props.exercise._id);
+            if (window.confirm("Are you sure you wish to delete this item?"))
+              props.deleteExercise(props.exercise._id);
           }}
         >
           delete

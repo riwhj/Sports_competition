@@ -17,8 +17,7 @@ export default class EditExercise extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      
-      cetagory:"",
+      cetagory: "",
       name: "",
       image: "",
       place: "",
@@ -32,7 +31,7 @@ export default class EditExercise extends Component {
       .get("http://localhost:5000/exercises/" + this.props.match.params.id)
       .then((response) => {
         this.setState({
-          cetagory:response.data.cetagory,
+          cetagory: response.data.cetagory,
           name: response.data.name,
           image: response.data.image,
           place: response.data.place,
@@ -108,13 +107,13 @@ export default class EditExercise extends Component {
   render() {
     return (
       <>
-         <div class="container">
+        <div class="container">
           <div class="form-group">
             <form onSubmit={this.onSubmit}>
               <div class="row">
-              <div class="col-xl-6 col-lg-6">
+                <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
-                    <label>Competition type: </label>
+                    <label>Cetagory: </label>
                     <input
                       type="text"
                       required
@@ -127,7 +126,7 @@ export default class EditExercise extends Component {
                 </div>
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
-                    <label>Province: </label>
+                    <label>Name: </label>
                     <input
                       type="text"
                       required
@@ -138,8 +137,8 @@ export default class EditExercise extends Component {
                     />
                   </div>
                 </div>
-                </div>
-                <div class="row">
+              </div>
+              <div class="row">
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
                     <label>The place: </label>
@@ -153,8 +152,7 @@ export default class EditExercise extends Component {
                     />
                   </div>
                 </div>
-            
-              
+
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
                     <label>organizer: </label>
@@ -168,7 +166,7 @@ export default class EditExercise extends Component {
                     />
                   </div>
                 </div>
-                </div>
+              </div>
               <div class="row">
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
@@ -194,7 +192,7 @@ export default class EditExercise extends Component {
                     </div>
                   </div>
                 </div>
-            
+
                 <div class="col-m-12 col-lg-12">
                   <div className="form-group">
                     <label>Detail: </label>
@@ -211,7 +209,7 @@ export default class EditExercise extends Component {
                   </div>
                 </div>
               </div>
-            
+
               <div className="form-group">
                 <input
                   type="submit"
