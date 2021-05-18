@@ -2,15 +2,18 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const User = (props) => (
+const Cards = (props) => (
   <tr>
-    <td>{props.user.fullname}</td>
-    <td>{props.user.sex}</td>
-    <td>{props.user.phone}</td>
-    <td>{props.user.email}</td>
-    <td>
-      <Link to={"/edituser/" + props.user._id}>edit</Link>
-    </td>
+    <td>{props.cards.cetagory}</td>
+    <td>{props.cards.name}</td>
+    <td>{props.cards.place}</td>
+    <td>{props.cards.organizer}</td>
+    <td>{props.cards.date}</td>
+    <td>{props.cards.fullname}</td>
+    <td>{props.cards.born}</td>
+    <td>{props.cards.sex}</td>
+    <td>{props.cards.phone}</td>
+    <td>{props.cards.email}</td>
   </tr>
 );
 
@@ -19,15 +22,30 @@ export default class profile extends Component {
     super(props);
 
     this.deleteUser = this.deleteUser.bind(this);
+    this.setSearch = this.setSearch.bind(this);
+    this.cardsList = this.cardsList.bind(this);
 
-    this.state = { users: [] };
+    this.state = {
+      cards: [],
+      search: "",
+      cetagory: "",
+      name: "",
+      place: "",
+      organizer: "",
+      date: "",
+      fullname: "",
+      sex: "",
+      born: "",
+      phone: "",
+      email: "",
+    };
   }
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/users/")
+      .get("http://localhost:5000/cards/profile")
       .then((response) => {
-        this.setState({ users: response.data });
+        this.setState({ cards: response.data });
       })
       .catch((error) => {
         console.log(error);
@@ -44,12 +62,12 @@ export default class profile extends Component {
     });
   }
 
-  userList() {
-    return this.state.users.map((currentuser) => {
+  cardsList() {
+    return this.state.cards.map((currentuser) => {
       return (
-        <User
-          user={currentuser}
-          deleteUser={this.deleteUser}
+        <Cards
+          cards={currentuser}
+          // deleteUser={this.deleteUser}
           key={currentuser._id}
         />
       );
@@ -63,9 +81,9 @@ export default class profile extends Component {
     const { search } = this.state;
     console.log(search);
     axios
-      .get("http://localhost:5000/exercises/search/" + search)
+      .get("http://localhost:5000/cards/search/" + search)
       .then((response) => {
-        this.setState({ exercises: response.data });
+        this.setState({ cards: response.data });
       })
       .catch((error) => {
         console.log(error);
@@ -115,7 +133,7 @@ export default class profile extends Component {
                   <th>EMAIL</th>
                 </tr>
               </thead>
-              <tbody>{this.userList()}</tbody>
+              <tbody>{this.cardsList()}</tbody>
             </table>
           </div>
         </div>
