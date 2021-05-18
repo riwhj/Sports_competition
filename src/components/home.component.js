@@ -183,8 +183,8 @@ export default class Home extends Component {
 
     return (
       <>
-        <div className="container">
-        {/* <h1 class="h1">APPLY</h1> */}
+        {this.state.check == false && (<div className="container">
+       
           <br />
           <div className="row">
             <div className="col-10">
@@ -205,11 +205,11 @@ export default class Home extends Component {
               </button>
             </div>
           </div><br/>
-        </div>
+        </div> )}
 
         {this.state.check == true && (
           <div class="container">
-             
+              <h1 class="h1">APPLY FOR THE COMPETITION</h1><br/>
           <div class="form-group">
             <form onSubmit={this.onSubmit}>
               <div class="row">
