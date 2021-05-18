@@ -7,6 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const Exercise = (props) => (
   <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+    <div class ="row">
     <div class="col-xl-7 col-lg-7">
       <img class="img-fluid mb-7 mb-lg-0" src={props.exercise.image} alt="" />
     </div>
@@ -37,6 +38,7 @@ const Exercise = (props) => (
           Apply
         </button>
       </div>
+    </div>
     </div>
   </div>
 );
