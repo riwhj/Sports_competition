@@ -199,6 +199,9 @@ export default class CreateLocation extends Component {
                       type="submit"
                       value="submit"
                       className="btn btn-primary"
+                      onClick={() => {
+                        if (window.confirm("Are you sure you wish to submit?"));
+                      }}
                     />{" "}
                     |{" "}
                     <Link

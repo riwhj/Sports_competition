@@ -222,7 +222,7 @@ export default class Home extends Component {
                 </div>
                 <div class="col-xl-3 col-lg-3">
                   <div className="form-group">
-                    <label>Birth Date: </label>
+                    <label>Age: </label>
                     <input
                       name="born"
                       type="text"
@@ -230,7 +230,7 @@ export default class Home extends Component {
                       className="form-control"
                       // value={this.state.username}
                       onChange={this.onChangeBorn}
-                      placeholder="กรุณากรอก วัน/เดือน/ปี เกิด"
+                      placeholder="กรุณากรอกอายุ"
                     />
                   </div>
                 </div>
@@ -285,6 +285,9 @@ export default class Home extends Component {
                   type="submit"
                   value="submit"
                   className="btn btn-primary"
+                  onClick={() => {
+                    if (window.confirm("Are you sure you wish to submit?"));
+                  }}
                 />
               </div>
             </form>

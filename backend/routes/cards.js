@@ -19,7 +19,7 @@ router.route("/createlistex").post((req, res) => {
   const sex = req.body.sex;
   const phone = req.body.phone;
   const email = req.body.email;
-  const born = Date.parse(req.body.born);
+  const born = req.body.born;
 
   const newCards = new Cards({
     cetagory,
