@@ -280,7 +280,7 @@ export default class Home extends Component {
                 </div>
               </div>
 
-              <div className="form-group">
+              <div className="form-group text-right">
                 <input
                   type="submit"
                   value="submit"

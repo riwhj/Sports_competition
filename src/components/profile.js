@@ -94,7 +94,7 @@ export default class profile extends Component {
     return (
       <>
         <div class="container">
-          <h1 className="h1">LIST PAGE</h1>
+          <h1 class="h1">LIST PAGE</h1>
           <br />
           <div className="row">
             <div className="col-10">
