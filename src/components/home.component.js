@@ -202,6 +202,7 @@ export default class Home extends Component {
         </div>
 
         {this.state.check == true && (
+          <div class="container">
           <div class="form-group">
             <form onSubmit={this.onSubmit}>
               <div class="row">
@@ -287,6 +288,7 @@ export default class Home extends Component {
                 />
               </div>
             </form>
+          </div>
           </div>
         )}
 
