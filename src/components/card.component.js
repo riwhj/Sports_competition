@@ -26,7 +26,7 @@ export default class Search extends Component {
                 </div>
                 <div class="col-xl-3 col-lg-3">
                   <div className="form-group">
-                    <label>BD: </label>
+                    <label>Birthday: </label>
                     <div>
                       <DatePicker
                       // selected={this.state.date}

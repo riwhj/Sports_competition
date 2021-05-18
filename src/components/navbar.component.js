@@ -65,16 +65,6 @@ export default class Navbar extends Component {
                     Create Exercise
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link
-                    to="/search"
-                    smooth={true}
-                    duration={500}
-                    class="nav-link js-scroll-trigger"
-                  >
-                    List
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>

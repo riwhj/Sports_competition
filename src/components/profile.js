@@ -127,7 +127,7 @@ export default class profile extends Component {
                   <th>ผู้จัด</th>
                   <th>dateที่จัดงาน</th>
                   <th>USERNAME</th>
-                  <th>BD</th>
+                  <th>Age</th>
                   <th>SEX</th>
                   <th>PHONE</th>
                   <th>EMAIL</th>
