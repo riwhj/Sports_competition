@@ -115,7 +115,7 @@ export default class showTravel extends Component {
           <div class="row align-items-center no-gutters mb-4 mb-lg-5">
             <img class="img-fluid mb-12 mb-lg-12" src={this.state.image} alt="" />
           </div>
-          <div class="col-xl-6 col-lg-6">
+          <div class="col-lg-12">
           <div class="featured-text text-center text-lg-left">
             <h4 class="text-black">{this.state.name}</h4>
             <p class="mb-0 text-black-60">The place: {this.state.place}</p>
@@ -123,9 +123,11 @@ export default class showTravel extends Component {
             <p class="mb-0 text-black-60">Date: {this.state.date}</p>
             <p class="mb-0 text-black-60">Detail: {this.state.detail}</p>
             <br />
+            <div class="text-right">
             <Link class="btn btn-primary js-scroll-trigger" to={"/"}>
               Back
             </Link>
+            </div>
           </div>
         </div>
       </div>

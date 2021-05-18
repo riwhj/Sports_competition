@@ -3,6 +3,7 @@ import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from "react-router-dom";
+import './Login.css';
 
 export default class CreateLocation extends Component {
   constructor(props) {
@@ -88,7 +89,7 @@ export default class CreateLocation extends Component {
     return (
       <>
         <div class="container">
-          <h1>Create Exercise</h1>
+          <h1 class="h1">CREATE EXERCISE</h1>
           <br />
           <div class="form-group">
             <form onSubmit={this.onSubmit}>
@@ -193,7 +194,7 @@ export default class CreateLocation extends Component {
               </div>
               <div className="row">
                 <div className="col">
-                  <div className="form-group">
+                  <div className="form-group text-right">
                     <input
                       type="submit"
                       value="submit"

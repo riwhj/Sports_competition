@@ -108,7 +108,7 @@ export default class EditExercise extends Component {
     return (
       <>
         <div class="container">
-          <h1>Edit Data</h1>
+          <h1 class="h1">EDIT DATA</h1>
           <br />
           <div class="form-group">
             <form onSubmit={this.onSubmit}>
@@ -212,7 +212,7 @@ export default class EditExercise extends Component {
                 </div>
               </div>
 
-              <div className="form-group">
+              <div className="form-group text-right">
                 <input
                   type="submit"
                   value="submit"

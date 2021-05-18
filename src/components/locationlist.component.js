@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import './Login.css';
 
 const Exercise = (props) => (
   <div class="row align-items-center no-gutters mb-7 mb-lg-0">
@@ -89,10 +90,9 @@ export default class LocationList extends Component {
     return (
       <>
         <div className="container">
-          <h1>Exercise List</h1>
-          <br />
+          <h1 class="h1">EXERCISE LIST</h1>
         </div>
-        <section class="projects-section bg-light" id="projects">
+        <section class="projects-section " id="projects">
           <div class="container">{this.exerciseList()}</div>
         </section>
       </>
