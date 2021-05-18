@@ -37,12 +37,12 @@ export default class Navbar extends Component {
                 </li>
                 <li class="nav-item">
                   <Link
-                    to="/profile"
+                    to="/List"
                     smooth={true}
                     duration={500}
                     class="nav-link js-scroll-trigger"
                   >
-                    Profile
+                    List
                   </Link>
                 </li>
                 <li class="nav-item">

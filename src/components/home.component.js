@@ -174,10 +174,10 @@ export default class Home extends Component {
   }
 
   render() {
+
     return (
       <>
         <div className="container">
-          <h1>Home</h1>
           <br />
           <div className="row">
             <div className="col-10">
@@ -191,7 +191,7 @@ export default class Home extends Component {
             </div>
             <div className="col-2">
               <button
-                className="btn btn-primary"
+                className="btn btn-primary  bsearch"
                 onClick={() => this.confirm()}
               >
                 <span>search</span>
@@ -289,7 +289,7 @@ export default class Home extends Component {
           </div>
         )}
 
-        <section className="projects-section bg-light" id="projects">
+        <section className="projects-section " id="projects">
           {this.state.check == false && (
             <div className="container">{this.exerciseList()}</div>
           )}

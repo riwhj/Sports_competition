@@ -7,7 +7,6 @@ const Cards = (props) => (
     <td>{props.cards.cetagory}</td>
     <td>{props.cards.name}</td>
     <td>{props.cards.place}</td>
-    <td>{props.cards.organizer}</td>
     <td>{props.cards.date}</td>
     <td>{props.cards.fullname}</td>
     <td>{props.cards.born}</td>
@@ -95,7 +94,7 @@ export default class profile extends Component {
     return (
       <>
         <div class="container">
-          <h1>Profile Page</h1>
+          <h1>List Page</h1>
           <br />
           <div className="row">
             <div className="col-10">
@@ -121,16 +120,15 @@ export default class profile extends Component {
             <table className="table">
               <thead className="thead-light">
                 <tr>
-                  <th>cetagory</th>
-                  <th>รายการการแข่งขัน</th>
-                  <th>สถานที่</th>
-                  <th>ผู้จัด</th>
-                  <th>dateที่จัดงาน</th>
-                  <th>USERNAME</th>
+                  <th>Cetagory</th>
+                  <th>List</th>
+                  <th>Locate</th>
+                  <th>Date</th>
+                  <th>Username</th>
                   <th>Age</th>
-                  <th>SEX</th>
-                  <th>PHONE</th>
-                  <th>EMAIL</th>
+                  <th>Sex</th>
+                  <th>Phone</th>
+                  <th>Email</th>
                 </tr>
               </thead>
               <tbody>{this.cardsList()}</tbody>

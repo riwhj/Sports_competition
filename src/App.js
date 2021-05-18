@@ -26,7 +26,7 @@ function App() {
       <br />
       <Route path="/" exact component={Home} />
       <Route path="/travel" exact component={LocationList} />
-      <Route path="/profile" exact component={profile} />
+      <Route path="/List" exact component={profile} />
       <Route path="/edit/:id" component={EditExercise} />
       <Route path="/createLocation" component={CreateLocation} />
       <Route path="/showcompetition/:id" component={showtravel} />
