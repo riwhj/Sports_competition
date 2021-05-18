@@ -220,7 +220,7 @@ export default class Home extends Component {
                 </div>
                 <div class="col-xl-3 col-lg-3">
                   <div className="form-group">
-                    <label>BD: </label>
+                    <label>Birth Date: </label>
                     <input
                       name="born"
                       type="text"
@@ -228,7 +228,7 @@ export default class Home extends Component {
                       className="form-control"
                       // value={this.state.username}
                       onChange={this.onChangeBorn}
-                      placeholder="กรุณากรอกชื่อ-นามสกุล"
+                      placeholder="กรุณากรอก วัน/เดือน/ปี เกิด"
                     />
                   </div>
                 </div>
