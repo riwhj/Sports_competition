@@ -29,7 +29,12 @@ const Exercise = (props) => (
           ShowDetail
         </Link>{" "}
         |{" "}
-          <button class="btn btn-primary js-scroll-trigger" onClick={props.apply(props)}>Apply</button>
+        <button
+          class="btn btn-primary js-scroll-trigger"
+          onClick={() => props.apply(props)}
+        >
+          Apply
+        </button>
       </div>
     </div>
   </div>
@@ -44,14 +49,14 @@ export default class Home extends Component {
     this.state = {
       exercises: [],
       search: "",
-      cetagory:"",
+      cetagory: "",
       name: "",
       place: "",
       organizer: "",
       date: "",
-      fullname:"",
+      fullname: "",
       sex: "",
-      born:"",
+      born: "",
       phone: "",
       email: "",
       check: false,
@@ -59,46 +64,62 @@ export default class Home extends Component {
     this.setSearch = this.setSearch.bind(this);
     this.confirm = this.confirm.bind(this);
     this.apply = this.apply.bind(this);
-
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onChangeFullname = this.onChangeFullname.bind(this);
+    this.onChangeSex = this.onChangeSex.bind(this);
+    this.onChangePhone = this.onChangePhone.bind(this);
+    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangeBorn = this.onChangeBorn.bind(this);
   }
-  apply(props){
-    this.setState({check:true});
+  onChangeFullname(e) {
+    this.setState({ fullname: e.target.value });
+  }
+  onChangeSex(e) {
+    this.setState({ sex: e.target.value });
+  }
+  onChangePhone(e) {
+    this.setState({ phone: e.target.value });
+  }
+  onChangeEmail(e) {
+    this.setState({ email: e.target.value });
+  }
+  onChangeBorn(e) {
+    this.setState({ born: e.target.value });
+  }
+
+  apply(props) {
+    this.setState({ check: true });
     console.log(props);
-    this.setState({cetagory:props.exercise.cetagory});
-    this.setState({name:props.exercise.name});
-    this.setState({place:props.exercise.place});
-    this.setState({organizer:props.exercise.organizer});
-    this.setState({date:props.exercise.date});
-  
+    this.setState({ cetagory: props.exercise.cetagory });
+    this.setState({ name: props.exercise.name });
+    this.setState({ place: props.exercise.place });
+    this.setState({ organizer: props.exercise.organizer });
+    this.setState({ date: props.exercise.date });
   }
   onSubmit(e) {
     e.preventDefault();
 
-    const exercise = {
+    console.log(e.target.sex);
+    const cards = {
       cetagory: this.state.cetagory,
       name: this.state.name,
       place: this.state.place,
       organizer: this.state.organizer,
       date: this.state.date,
-
-      fullname:e.target.fullname,
-      sex: e.target.sex,
-      born:e.target.born,
-      phone: e.target.phone,
-      email: e.target.email,
-     
-
+      fullname: this.state.fullname,
+      sex: this.state.sex,
+      born: this.state.born,
+      phone: this.state.phone,
+      email: this.state.email,
     };
-    console.log(exercise);
+    console.log(cards);
 
     axios
-      .post("http://localhost:5000/exercises/search", exercise)
+      .post("http://localhost:5000/cards/listex", cards)
       .then((res) => console.log(res.data));
-
-    window.location = "/search";
-    this.setState({check:false})
+      this.setState({check:false})
+      // window.location = "/profile";
   }
-
 
   componentDidMount() {
     axios
@@ -109,7 +130,6 @@ export default class Home extends Component {
       .catch((error) => {
         console.log(error);
       });
-      
   }
 
   deleteExercise(id) {
@@ -180,19 +200,20 @@ export default class Home extends Component {
           </div>
         </div>
 
-        {this.state.check==true&&<div class="form-group">
-        <form onSubmit={this.onSubmit}>
+        {this.state.check == true && (
+          <div class="form-group">
+            <form onSubmit={this.onSubmit}>
               <div class="row">
                 <div class="col-xl-6 col-lg-6">
                   <div className="form-group">
                     <label>Fullname : </label>
                     <input
-                    name="fullname"
+                      name="fullname"
                       type="text"
                       required
                       className="form-control"
                       // value={this.state.username}
-                      // onChange={this.onChangeUsername}
+                      onChange={this.onChangeFullname}
                       placeholder="กรุณากรอกชื่อ-นามสกุล"
                     />
                   </div>
@@ -201,25 +222,25 @@ export default class Home extends Component {
                   <div className="form-group">
                     <label>BD: </label>
                     <input
-                    name="born"
+                      name="born"
                       type="text"
                       required
                       className="form-control"
                       // value={this.state.username}
-                      // onChange={this.onChangeUsername}
+                      onChange={this.onChangeBorn}
                       placeholder="กรุณากรอกชื่อ-นามสกุล"
                     />
-        
                   </div>
                 </div>
                 <div class="col-xl-3 col-lg-3">
                   <div className="form-group">
                     <label>Sex: </label>
                     <input
-                    name="sex"
+                      name="sex"
                       type="text"
                       required
                       className="form-control"
+                      onChange={this.onChangeSex}
                       placeholder="กรุณากรอกเพศ"
                     />
                   </div>
@@ -230,12 +251,12 @@ export default class Home extends Component {
                   <div className="form-group">
                     <label>Email: </label>
                     <input
-                    name="email"
+                      name="email"
                       type="text"
                       required
                       className="form-control"
                       // value={this.state.password}
-                      // onChange={this.onChangePassword}
+                      onChange={this.onChangeEmail}
                       placeholder="กรุณากรอกอีเมล"
                     />
                   </div>
@@ -245,12 +266,12 @@ export default class Home extends Component {
                   <div className="form-group">
                     <label>Phone Number: </label>
                     <input
-                    name ="phone"
+                      name="phone"
                       type="text"
                       required
                       className="form-control"
                       // value={this.state.phone}
-                      // onChange={this.onChangePhone}
+                      onChange={this.onChangePhone}
                       placeholder="กรุณากรอกเบอร์โทรศัพท์"
                     />
                   </div>
@@ -265,10 +286,13 @@ export default class Home extends Component {
                 />
               </div>
             </form>
-            </div>}
+          </div>
+        )}
 
         <section className="projects-section bg-light" id="projects">
-        {this.state.check==false&&<div className="container">{this.exerciseList()}</div>}
+          {this.state.check == false && (
+            <div className="container">{this.exerciseList()}</div>
+          )}
         </section>
       </>
     );
